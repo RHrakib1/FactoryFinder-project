@@ -1,26 +1,22 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-
 const Navbar = () => {
-    const link = <>
-        <NavLink className='text-2xl font-bold ml-3' to='/'>Home</NavLink>
-        <NavLink className='text-2xl font-bold ml-3' to='about'>About</NavLink>
-        <NavLink className='text-2xl font-bold ml-3' to='/service'>Service</NavLink>
-    </>;
-
+    const linkClass = 'text-2xl font-bold ml-3';
+z
+const link = 
+  <>
+    <NavLink className={({ isActive }) => isActive ? `${linkClass} text-green-500` : linkClass} to='/'>Home</NavLink>
+    <NavLink className={({ isActive }) => isActive ? `${linkClass} text-green-500` : linkClass} to='about'>About</NavLink>
+    <NavLink className={({ isActive }) => isActive ? `${linkClass} text-green-500` : linkClass} to='/service'>Service</NavLink>
+    <NavLink className={({ isActive }) => isActive ? `${linkClass} text-green-500` : linkClass} to='/profile'>Update Profile</NavLink>
+  </>
     return (
         <div className="navbar bg-base-100 flex justify-between items-center">
-            {/* নেভবারের শুরুতে FactoryFinder */}
             <a className="text-4xl font-bold">FactoryFinder</a>
-
-            {/* বড় স্ক্রিনের জন্য লিংকগুলো */}
             <div className="hidden lg:flex items-center space-x-4">
                 {link}
             </div>
-
-            {/* ডান পাশে প্রোফাইল ছবি এবং লিংকগুলো */}
             <div className="flex items-center">
-                {/* ছোট স্ক্রিনে Dropdown */}
                 <div className="dropdown lg:hidden">
                     <div tabIndex={0} role="button" className="btn btn-ghost">
                         <svg
@@ -42,8 +38,6 @@ const Navbar = () => {
                         {link}
                     </ul>
                 </div>
-
-                {/* প্রোফাইল ছবি */}
                 <div className="dropdown dropdown-end ml-4">
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
@@ -69,5 +63,4 @@ const Navbar = () => {
         </div>
     );
 };
-
 export default Navbar;
