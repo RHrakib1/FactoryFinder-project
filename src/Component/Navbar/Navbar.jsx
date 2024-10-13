@@ -1,11 +1,11 @@
-import React from 'react';
+
 import { NavLink } from 'react-router-dom';
 const Navbar = () => {
     const linkClass = 'text-2xl font-bold ml-3';
-z
+
 const link = 
   <>
-    <NavLink className={({ isActive }) => isActive ? `${linkClass} text-green-500` : linkClass} to='/'>Home</NavLink>
+    <NavLink className={({ isActive }) => isActive ? `${linkClass} text-green-500` : linkClass} to='/home'>Home</NavLink>
     <NavLink className={({ isActive }) => isActive ? `${linkClass} text-green-500` : linkClass} to='about'>About</NavLink>
     <NavLink className={({ isActive }) => isActive ? `${linkClass} text-green-500` : linkClass} to='/service'>Service</NavLink>
     <NavLink className={({ isActive }) => isActive ? `${linkClass} text-green-500` : linkClass} to='/profile'>Update Profile</NavLink>
@@ -39,12 +39,14 @@ const link =
                     </ul>
                 </div>
                 <div className="dropdown dropdown-end ml-4">
+                <NavLink to='/login'><button  className='btn btn-ghost text-xl'>Login</button></NavLink>
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full">
+                        
+                        {/* <div className="w-10 rounded-full">
                             <img
                                 alt="Profile"
                                 src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-                        </div>
+                        </div> */}
                     </div>
                     <ul
                         tabIndex={0}

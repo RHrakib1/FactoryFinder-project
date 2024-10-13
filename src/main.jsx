@@ -11,6 +11,10 @@ import Home from './Component/Home/Home.jsx';
 import About from './Component/About/About.jsx';
 import Sarvices from './Component/Sarvices/Sarvices.jsx';
 import Profile from './Component/Profile/Profile.jsx';
+import Login from './Component/Login/Login.jsx';
+import Register from './Component/Register/Register.jsx';
+import AnotherComponent from './Component/AnotherComponent/AnotherComponent.jsx';
+import Authentication from './Component/Authentication/Authentication.jsx';
 
 const router = createBrowserRouter([
   {
@@ -18,11 +22,17 @@ const router = createBrowserRouter([
     element: <Root></Root>,
     children: [
       {
-        path: '/',
-        element: <Home></Home>
+        path: '/home',
+        element: <Home></Home>,
+        loader: () => fetch('fackData.json')
       },
       {
-        path: "/about",
+        path: '/anothercomponent/:id',
+        element: <AnotherComponent></AnotherComponent>,
+        loader: () => fetch('fackData.json')
+      },
+      {
+        path: '/about',
         element: <About></About>
       },
       {
@@ -33,12 +43,22 @@ const router = createBrowserRouter([
         path: "/profile",
         element: <Profile></Profile>
       },
+      {
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
+        path: '/register',
+        element: <Register></Register>
+      }
     ]
   },
 ]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <Authentication>
+      <RouterProvider router={router} />
+    </Authentication>
   </StrictMode>,
 )

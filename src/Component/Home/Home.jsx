@@ -1,9 +1,18 @@
-import React from 'react';
+ 
+import Banner from '../Banner/Banner';
+import { useLoaderData } from 'react-router-dom';
+import Home2 from './Home2';
 
 const Home = () => {
+    const data = useLoaderData()
     return (
         <div>
-            <h1>i am home secion</h1>
+            <Banner></Banner>
+            <div className='grid lg:grid-cols-3 gap-3'>
+                {
+                    data.map((copydata, idx) => <Home2 key={idx} shareData={copydata}></Home2>)
+                }
+            </div>
         </div>
     );
 };

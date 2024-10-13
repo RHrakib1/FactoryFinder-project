@@ -1,10 +1,11 @@
-import React from 'react';
+
+
 
 const About = () => {
+   
     return (
-        <div>
-            <h1>about</h1>
-        </div>
+        
+        <h2>i am about</h2>
     );
 };
 

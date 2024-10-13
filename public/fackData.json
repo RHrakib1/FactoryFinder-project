@@ -1,0 +1,104 @@
+[
+    {
+        "estate_title": "Spacious Warehouse in Industrial Park",
+        "id": "WH001",
+        "segment_name": "Warehouses",
+        "description": "A large, well-ventilated warehouse located in a prime industrial park. Ideal for storage and distribution.",
+        "price": "$500,000",
+        "status": "sale",
+        "area": "2000 sq ft",
+        "location": "Industrial Park",
+        "facilities": [
+            "Storage Room",
+            "Loading Dock",
+            "Security Office"
+        ],
+        "image": "https://i.ibb.co.com/6yKjc7p/val-vesa-j-Q5-Cjzf-Exb8-unsplash.jpg",
+        "view_property_button": "View Property"
+    },
+    {
+        "estate_title": "Modern Factory Unit",
+        "id": "FAC001",
+        "segment_name": "Factories",
+        "description": "A fully equipped factory with modern machinery and ample workspace.",
+        "price": "$2,000,000",
+        "status": "sale",
+        "area": "5000 sq ft",
+        "location": "Factory Zone",
+        "facilities": [
+            "Assembly Line",
+            "Loading Area",
+            "Office Space"
+        ],
+        "image": "https://i.ibb.co.com/02zyyFp/bro-takes-photos-54vugil-Az-HU-unsplash.jpg",
+        "view_property_button": "View Property"
+    },
+    {
+        "estate_title": "Cold Storage Facility",
+        "id": "CS001",
+        "segment_name": "Cold storage facilities",
+        "description": "Cold storage facility with temperature control, ideal for food storage.",
+        "price": "$1,500,000",
+        "status": "rent",
+        "area": "3000 sq ft",
+        "location": "Cold Storage Zone",
+        "facilities": [
+            "Temperature Control",
+            "Loading Dock",
+            "Security System"
+        ],
+        "image": "https://i.ibb.co.com/qDtwsWx/yu-s-QGKw-Uaa-TWyc-unsplash.jpg",
+        "view_property_button": "View Property"
+    },
+    {
+        "estate_title": "Power Plant Facility",
+        "id": "PP001",
+        "segment_name": "Power plants",
+        "description": "Power plant facility suitable for energy generation and storage.",
+        "price": "$10,000,000",
+        "status": "sale",
+        "area": "10000 sq ft",
+        "location": "Power Plant Zone",
+        "facilities": [
+            "Energy Control Room",
+            "Turbine Area",
+            "Control Office"
+        ],
+        "image": "https://i.ibb.co.com/Ldz8pL4/xyzcharlize-7b49gfsg-QZY-unsplash.jpg",
+        "view_property_button": "View Property"
+    },
+    {
+        "estate_title": "Large Production Plant",
+        "id": "PP002",
+        "segment_name": "Production plants",
+        "description": "A spacious production plant equipped for large-scale manufacturing.",
+        "price": "$7,500,000",
+        "status": "sale",
+        "area": "7500 sq ft",
+        "location": "Production Zone",
+        "facilities": [
+            "Production Line",
+            "Loading Bay",
+            "Maintenance Room"
+        ],
+        "image": "https://i.ibb.co.com/bNNLnJg/ant-rozetsky-SLIFI67jv5k-unsplash.jpg",
+        "view_property_button": "View Property"
+    },
+    {
+        "estate_title": "Cold Storage with Advanced Facilities",
+        "id": "CS002",
+        "segment_name": "Cold storage facilities",
+        "description": "State-of-the-art cold storage facility ideal for pharmaceuticals and perishable goods.",
+        "price": "$1,200,000",
+        "status": "rent",
+        "area": "4000 sq ft",
+        "location": "Cold Storage Zone",
+        "facilities": [
+            "Temperature Control",
+            "Backup Generator",
+            "Loading Dock"
+        ],
+        "image": "https://i.ibb.co.com/4KVJbGs/patrick-hendry-6xe-DIZgo-Paw-unsplash.jpg",
+        "view_property_button": "View Property"
+    }
+]
