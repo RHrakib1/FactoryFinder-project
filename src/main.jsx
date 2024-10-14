@@ -17,11 +17,13 @@ import AnotherComponent from './Component/AnotherComponent/AnotherComponent.jsx'
 import Authentication from './Component/Authentication/Authentication.jsx';
 import PrivateRouter from './Component/PrivateRouter/PrivateRouter.jsx';
 import Contact from './Component/Contact/Contact.jsx';
+import Error from './Component/Error/Error.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<Error></Error>,
     children: [
       {
         path: '/',
