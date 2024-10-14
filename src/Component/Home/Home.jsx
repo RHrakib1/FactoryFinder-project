@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <h1 className='text-5xl font-bold'>Our Projects</h1>
+            <h1 className=' mt-10 mb-4 text-5xl font-bold'>Our Projects</h1>
             <div className='grid lg:grid-cols-3 gap-3'>
                 {
                     data.map((copydata, idx) => <Home2 key={idx} shareData={copydata}></Home2>)

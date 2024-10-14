@@ -6,17 +6,19 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
-    const { registerUser } = useContext(createContextUser);
+    const { registerUser, newprofile } = useContext(createContextUser);
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit1 = async (data) => {
-        const { email, password } = data;
+        const { email, password, name, url } = data;
         try {
             const result = await registerUser(email, password);
-            toast.success("Register successfully!"); 
+            toast.success("Register successfully!");
+            newprofile(name, url)
+
             console.log(result.user);
         } catch (error) {
-            toast.error(error.message); 
+            toast.error(error.message);
             console.log(error.message);
         }
     }

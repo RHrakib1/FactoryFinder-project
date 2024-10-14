@@ -16,6 +16,7 @@ import Register from './Component/Register/Register.jsx';
 import AnotherComponent from './Component/AnotherComponent/AnotherComponent.jsx';
 import Authentication from './Component/Authentication/Authentication.jsx';
 import PrivateRouter from './Component/PrivateRouter/PrivateRouter.jsx';
+import Contact from './Component/Contact/Contact.jsx';
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
     element: <Root></Root>,
     children: [
       {
-        path: '/home',
+        path: '/',
         element: <Home></Home>,
         loader: () => fetch('fackData.json')
       },
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: "/profile",
         element: <PrivateRouter><Profile></Profile></PrivateRouter>
+      },
+      {
+        path: '/contact',
+        element: <Contact></Contact>
       },
       {
         path: '/login',

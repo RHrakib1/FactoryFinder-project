@@ -13,9 +13,10 @@ const Navbar = () => {
 
     const link =
         <>
-            <NavLink className={({ isActive }) => isActive ? `${linkClass} text-green-500` : linkClass} to='/home'>Home</NavLink>
+            <NavLink className={({ isActive }) => isActive ? `${linkClass} text-green-500` : linkClass} to='/'>Home</NavLink>
             <NavLink className={({ isActive }) => isActive ? `${linkClass} text-green-500` : linkClass} to='about'>About</NavLink>
             <NavLink className={({ isActive }) => isActive ? `${linkClass} text-green-500` : linkClass} to='/service'>Service</NavLink>
+            <NavLink className={({ isActive }) => isActive ? `${linkClass} text-green-500` : linkClass} to='/contact'>Contact</NavLink>
             <NavLink className={({ isActive }) => isActive ? `${linkClass} text-green-500` : linkClass} to='/profile'>Update Profile</NavLink>
         </>
     return (
@@ -67,7 +68,7 @@ const Navbar = () => {
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                         <li>
                             <a className="justify-between">
-                                profile
+                                {user?.displayName || 'this is found'}
                             </a>
                         </li>
                         <button onClick={hendlelogoutuser}><li><a>Logout</a></li></button>

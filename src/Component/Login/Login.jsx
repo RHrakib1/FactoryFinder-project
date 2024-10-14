@@ -1,11 +1,20 @@
 import { useContext } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate, useNavigation } from 'react-router-dom';
 import { createContextUser } from '../Authentication/Authentication';
 import { useForm } from 'react-hook-form';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
 const Login = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+    console.log( location);
+
+
+
+
     const { loginUser, googleauthentication, githubauthentication } = useContext(createContextUser)
 
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -20,6 +29,9 @@ const Login = () => {
         loginUser(email, password)
             .then(result => {
                 toast.success("login successfully")
+                navigate(from)
+
+
             })
             .catch(error => {
                 toast.error("Login failed There is a problem with email/password")

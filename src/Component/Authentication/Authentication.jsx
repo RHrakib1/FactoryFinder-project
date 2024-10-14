@@ -49,9 +49,9 @@ const Authentication = ({ children }) => {
         setlodding(true)
         return signOut(auth);
     };
-    const newprofile = () => {
+    const newprofile = (name, photo) => {
         updateProfile(auth.currentUser, {
-            displayName: 'Jane Q. user', photoURL: 'https://lh3.googleusercontent.com/a/ACg8ocJ_6dYQQu06F3_AVUsYzWZmQpIIIBEYffV2SaWDw99A5QDN6y-a=s288-c-no'
+            displayName: name, photoURL: photo
         })
 
     }
