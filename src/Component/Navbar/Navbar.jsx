@@ -1,15 +1,23 @@
 
+import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { createContextUser } from '../Authentication/Authentication';
 const Navbar = () => {
+    const { user, logoutUser, newprofile } = useContext(createContextUser)
+    console.log('console hbe hooooooooooolllllllllooooooooooo:;;;;;', user);
+
+    const hendlelogoutuser = () => {
+        logoutUser()
+    }
     const linkClass = 'text-2xl font-bold ml-3';
 
-const link = 
-  <>
-    <NavLink className={({ isActive }) => isActive ? `${linkClass} text-green-500` : linkClass} to='/home'>Home</NavLink>
-    <NavLink className={({ isActive }) => isActive ? `${linkClass} text-green-500` : linkClass} to='about'>About</NavLink>
-    <NavLink className={({ isActive }) => isActive ? `${linkClass} text-green-500` : linkClass} to='/service'>Service</NavLink>
-    <NavLink className={({ isActive }) => isActive ? `${linkClass} text-green-500` : linkClass} to='/profile'>Update Profile</NavLink>
-  </>
+    const link =
+        <>
+            <NavLink className={({ isActive }) => isActive ? `${linkClass} text-green-500` : linkClass} to='/home'>Home</NavLink>
+            <NavLink className={({ isActive }) => isActive ? `${linkClass} text-green-500` : linkClass} to='about'>About</NavLink>
+            <NavLink className={({ isActive }) => isActive ? `${linkClass} text-green-500` : linkClass} to='/service'>Service</NavLink>
+            <NavLink className={({ isActive }) => isActive ? `${linkClass} text-green-500` : linkClass} to='/profile'>Update Profile</NavLink>
+        </>
     return (
         <div className="navbar bg-base-100 flex justify-between items-center">
             <a className="text-4xl font-bold">FactoryFinder</a>
@@ -39,26 +47,30 @@ const link =
                     </ul>
                 </div>
                 <div className="dropdown dropdown-end ml-4">
-                <NavLink to='/login'><button  className='btn btn-ghost text-xl'>Login</button></NavLink>
-                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                        
-                        {/* <div className="w-10 rounded-full">
-                            <img
-                                alt="Profile"
-                                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-                        </div> */}
-                    </div>
+
+                    {
+                        user ? <>
+                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                    <img
+                                        alt="Profile"
+                                        src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                                </div>
+                            </div></> :
+                            <>
+                                <NavLink to='/login'><button className='btn btn-ghost text-xl'>Login</button></NavLink>
+                            </>
+                    }
+
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                         <li>
                             <a className="justify-between">
-                                Profile
-                                <span className="badge">New</span>
+                                profile
                             </a>
                         </li>
-                        <li><a>Settings</a></li>
-                        <li><a>Logout</a></li>
+                        <button onClick={hendlelogoutuser}><li><a>Logout</a></li></button>
                     </ul>
                 </div>
             </div>

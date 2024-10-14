@@ -13,10 +13,10 @@ const Register = () => {
         const { email, password } = data;
         try {
             const result = await registerUser(email, password);
-            toast.success("Register successfully!"); // Successful toast
+            toast.success("Register successfully!"); 
             console.log(result.user);
         } catch (error) {
-            toast.error("Registration failed, please try again."); // Error toast
+            toast.error(error.message); 
             console.log(error.message);
         }
     }
@@ -37,7 +37,7 @@ const Register = () => {
                                 </label>
                                 <input type="text" placeholder="name" className="input input-bordered"
                                     {...register("name", { required: "This field is required" })} />
-                                {errors.name && <span>{errors.name.message}</span>}
+                                {errors.name && <span className='text-red-500'>{errors.name.message}</span>}
                             </div>
                             <div className="form-control">
                                 <label className="label">
@@ -51,7 +51,7 @@ const Register = () => {
                                             message: "Please enter a valid email"
                                         }
                                     })} />
-                                {errors.email && <span>{errors.email.message}</span>}
+                                {errors.email && <span className='text-red-500'>{errors.email.message}</span>}
                             </div>
                             <div className="form-control">
                                 <label className="label">
@@ -59,7 +59,7 @@ const Register = () => {
                                 </label>
                                 <input type="text" placeholder="photo url" className="input input-bordered"
                                     {...register("url", { required: "This field is required" })} />
-                                {errors.url && <span>{errors.url.message}</span>}
+                                {errors.url && <span className='text-red-500'>{errors.url.message}</span>}
                             </div>
                             <div className="form-control">
                                 <label className="label">
@@ -68,12 +68,12 @@ const Register = () => {
                                 <input type="password" placeholder="password" className="input input-bordered"
                                     {...register("password", {
                                         required: "This field is required",
-                                        minLength: {
-                                            value: 6,
-                                            message: "Password must be at least 6 characters long"
+                                        pattern: {
+                                            value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,}$/,
+                                            message: "Password must contain at least one uppercase letter, one lowercase letter, and one number"
                                         }
                                     })} />
-                                {errors.password && <span>{errors.password.message}</span>}
+                                {errors.password && <span className='text-red-500'>{errors.password.message}</span>}
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Register</button>
