@@ -21,7 +21,7 @@ const Navbar = () => {
         </>
     return (
         <div className="navbar bg-base-100 flex justify-between items-center">
-            <a className="text-4xl font-bold">FactoryFinder</a>
+            <a className="lg:text-4xl  font-bold">FactoryFinder</a>
             <div className="hidden lg:flex items-center space-x-4">
                 {link}
             </div>
